@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Valuta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="61" translatesAutoresizingMaskIntoConstraints="NO" id="h2G-RB-lKi">
+                                <rect key="frame" x="79.5" y="431" width="255" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Доллар  $" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="15v-k2-foA">
+                                        <rect key="frame" x="0.0" y="0.0" width="97" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="97" id="VaK-5g-mRI"/>
+                                            <constraint firstAttribute="height" constant="34" id="uhv-A1-YpX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Руб ₽ " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6c-F2-KTz">
+                                        <rect key="frame" x="158" y="0.0" width="97" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="97" id="i91-yo-VMr"/>
+                                            <constraint firstAttribute="height" constant="34" id="pxA-Cs-kYl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rq-fa-bWC">
+                                <rect key="frame" x="190" y="521" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wz5-uk-0oI"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoJ-ZN-B58">
+                                <rect key="frame" x="0.0" y="199" width="414" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="gUx-6h-gUW"/>
+                                    <constraint firstAttribute="height" constant="162" id="jnE-8r-cRy"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите валюту 🤑" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBn-Ep-AT9">
+                                <rect key="frame" x="0.0" y="163" width="414" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WoJ-ZN-B58" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8th-bi-Y3I"/>
+                            <constraint firstItem="sBn-Ep-AT9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Cip-Wn-JFv"/>
+                            <constraint firstItem="WoJ-ZN-B58" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HPP-FI-52d"/>
+                            <constraint firstItem="sBn-Ep-AT9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="119" id="KtV-40-zQN"/>
+                            <constraint firstItem="WoJ-ZN-B58" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="155" id="LKP-BD-210"/>
+                            <constraint firstItem="sBn-Ep-AT9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZSA-U2-Wn0"/>
+                            <constraint firstItem="h2G-RB-lKi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="beb-PN-9z5"/>
+                            <constraint firstItem="h2G-RB-lKi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mm9-Qf-0NY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dollarsTextField" destination="S6c-F2-KTz" id="N58-0k-rzj"/>
+                        <outlet property="pickerView" destination="WoJ-ZN-B58" id="8Dk-hL-3Rt"/>
+                        <outlet property="rubelsTextField" destination="15v-k2-foA" id="vJy-hi-2Ep"/>
+                        <outlet property="textLabel" destination="sBn-Ep-AT9" id="c05-X8-dVh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
