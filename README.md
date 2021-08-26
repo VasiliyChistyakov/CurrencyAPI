@@ -1,6 +1,6 @@
 # CurrencyAPI
 
-The currency converter app using exchange rates in JSON format Central Bank Russian Federation 
+The currency converter app using exchange rates in [JSON format Central Bank Russian Federation](https://www.cbr-xml-daily.ru)
 
 - URLSession
 - JSON
