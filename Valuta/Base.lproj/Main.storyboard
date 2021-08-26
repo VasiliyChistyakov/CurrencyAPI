@@ -19,7 +19,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="61" translatesAutoresizingMaskIntoConstraints="NO" id="h2G-RB-lKi">
                                 <rect key="frame" x="79.5" y="431" width="255" height="34"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Доллар  $" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="15v-k2-foA">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="15v-k2-foA">
                                         <rect key="frame" x="0.0" y="0.0" width="97" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="97" id="VaK-5g-mRI"/>
@@ -40,9 +40,9 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rq-fa-bWC">
-                                <rect key="frame" x="190" y="521" width="34" height="30"/>
+                                <rect key="frame" x="164" y="521" width="86" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Узнать курс"/>
                                 <connections>
                                     <action selector="saveAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wz5-uk-0oI"/>
                                 </connections>

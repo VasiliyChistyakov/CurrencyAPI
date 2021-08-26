@@ -73,5 +73,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         pickedValute = listOfcurrencies[row]
         print(pickedValute)
         textLabel.text = ratesModel?.Valute[pickedValute]?.Name
+        rubelsTextField.placeholder = listOfcurrencies[row]
+//        rubelsTextField.placeholder = ratesModel?.Valute["\(pickedValute ?? " ")"]!.CharCode
     }
 }
