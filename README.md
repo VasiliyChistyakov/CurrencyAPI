@@ -1,6 +1,6 @@
 # CurrencyAPI
 
-Приложение использует API [ЦБ РФ](https://www.cbr-xml-daily.ru), для перевода выбранную пользователем валюту в Рубль.
+Приложение использует API [ЦБ РФ](https://www.cbr-xml-daily.ru), для перевода в Рубли.
 
 - URLSession
 - JSON
