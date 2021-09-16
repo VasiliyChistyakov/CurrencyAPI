@@ -1,6 +1,6 @@
 # CurrencyAPI
 
-The currency converter app using exchange rates in [JSON format Central Bank Russian Federation](https://www.cbr-xml-daily.ru)
+Приложение использует [API ЦБ РФ](https://www.cbr-xml-daily.ru), для перевода Рубля в выбранную пользователем валюту.
 
 - URLSession
 - JSON
