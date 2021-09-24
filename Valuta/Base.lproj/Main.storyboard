@@ -35,18 +35,10 @@
                                             <constraint firstAttribute="height" constant="34" id="pxA-Cs-kYl"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rq-fa-bWC">
-                                <rect key="frame" x="164" y="521" width="86" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Узнать курс"/>
-                                <connections>
-                                    <action selector="saveAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wz5-uk-0oI"/>
-                                </connections>
-                            </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoJ-ZN-B58">
                                 <rect key="frame" x="0.0" y="199" width="414" height="162"/>
                                 <constraints>
@@ -63,16 +55,20 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="WoJ-ZN-B58" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8th-bi-Y3I"/>
+                            <constraint firstItem="h2G-RB-lKi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8y2-NJ-B4b"/>
+                            <constraint firstItem="h2G-RB-lKi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="APd-MX-JNM"/>
                             <constraint firstItem="sBn-Ep-AT9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Cip-Wn-JFv"/>
                             <constraint firstItem="WoJ-ZN-B58" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HPP-FI-52d"/>
                             <constraint firstItem="sBn-Ep-AT9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="119" id="KtV-40-zQN"/>
                             <constraint firstItem="WoJ-ZN-B58" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="155" id="LKP-BD-210"/>
                             <constraint firstItem="sBn-Ep-AT9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZSA-U2-Wn0"/>
-                            <constraint firstItem="h2G-RB-lKi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="beb-PN-9z5"/>
-                            <constraint firstItem="h2G-RB-lKi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mm9-Qf-0NY"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="gDl-3g-lI1" appends="YES" id="ALX-Fh-Gde"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="dollarsTextField" destination="S6c-F2-KTz" id="N58-0k-rzj"/>
@@ -82,6 +78,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gDl-3g-lI1">
+                    <connections>
+                        <action selector="tapAction:" destination="BYZ-38-t0r" id="zUg-5t-UU3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
         </scene>

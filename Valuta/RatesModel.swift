@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 // MARK: - RatesModel
 struct RatesModel: Codable {
     let Date: String

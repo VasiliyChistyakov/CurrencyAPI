@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
     
@@ -18,40 +19,43 @@ class ViewController: UIViewController {
     @IBOutlet weak var dollarsTextField: UITextField!
     @IBOutlet weak var textLabel: UILabel!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.dataSource = self
         pickerView.delegate = self
-        fetchRates()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap(_:)))
+        tapGesture.numberOfTapsRequired = 2
+        view.addGestureRecognizer(tapGesture)
+        
+        NetworkingManager.shared.fetchRates { model in
+            self.ratesModel = model
+        }
     }
     
-    @IBAction func saveAction(_ sender: Any) {
+    @objc private func didDoubleTap(_ gesture: UITapGestureRecognizer) {
+        сalculatingСurrency(rubelsTextField: rubelsTextField, dollarsTextField: dollarsTextField, pickedValute: pickedValute)
+//        print("DoubleTap")
+    }
+    
+    @IBAction func tapAction(_ sender: Any) {
+        rubelsTextField.resignFirstResponder()
+        dollarsTextField.resignFirstResponder()
         
+        if let rubels = rubelsTextField.text, rubels.isEmpty {
+            dollarsTextField.text?.removeAll()
+//            print("OneTap")
+        }
+    }
+    
+    func сalculatingСurrency(rubelsTextField: UITextField!, dollarsTextField: UITextField, pickedValute: String!) {
         guard let roubels: Int = (Int(rubelsTextField.text!)) else { return }
         //        print(roubels)
         guard let pickedValute = pickedValute else { return }
-        let valueRates =  roubels * Int((ratesModel?.Valute["\(pickedValute)"]!.Value)!)
-        dollarsTextField.text = "\(String(valueRates)) ₽"
-    }
-    
-    func fetchRates(){
-        guard let url = URL(string: "https://www.cbr-xml-daily.ru/daily_json.js") else { return }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data else { return }
-            print(data)
-            
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                self.ratesModel = try decoder.decode(RatesModel.self, from: data)
-                print(self.ratesModel?.Date)
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-        }.resume()
+        
+        let valueRates =  roubels * Int((ratesModel?.Valute["\(pickedValute)"]!.Value ?? 0))
+        dollarsTextField.text = "\(String(valueRates)) ₽"
     }
 }
 
@@ -61,9 +65,9 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
         listOfcurrencies.count
     }
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let valutePicker = listOfcurrencies[row]
         return valutePicker
@@ -71,9 +75,12 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickedValute = listOfcurrencies[row]
-        print(pickedValute)
+        //        print(pickedValute)
         textLabel.text = ratesModel?.Valute[pickedValute]?.Name
+        
         rubelsTextField.placeholder = listOfcurrencies[row]
-//        rubelsTextField.placeholder = ratesModel?.Valute["\(pickedValute ?? " ")"]!.CharCode
+        //        rubelsTextField.placeholder = ratesModel?.Valute["\(pickedValute ?? " ")"]!.CharCode
+        
+        сalculatingСurrency(rubelsTextField: rubelsTextField, dollarsTextField: dollarsTextField, pickedValute: pickedValute)
     }
 }
