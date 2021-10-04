@@ -49,38 +49,15 @@ class ViewController: UIViewController {
     }
     
     func сalculatingСurrency(rubelsTextField: UITextField!, dollarsTextField: UITextField, pickedValute: String!) {
-        guard let roubels: Int = (Int(rubelsTextField.text!)) else { return }
-                print(roubels)
-        guard let pickedValute = pickedValute else { return }
+        guard let roubels: Int = (Int(rubelsTextField.text!)), let pickedValute = pickedValute else { return }
         
+        let valueRates: Double = (Double(roubels) * Double((ratesModel?.Valute[pickedValute]!.Value ?? 0)))
         
-        let valueRates =  roubels * Int((ratesModel?.Valute["\(pickedValute)"]!.Value ?? 0))
-        dollarsTextField.text = "\(String(valueRates)) ₽"
+        guard let valuteNominal =  ratesModel?.Valute[pickedValute]?.Nominal! else { return }
+        
+        let сalculatingNominal = valueRates / Double(valuteNominal)
+        
+        dollarsTextField.text = "\(String(format:"%.2f",сalculatingNominal))"
     }
 }
 
-extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        listOfcurrencies.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let valutePicker = listOfcurrencies[row]
-        return valutePicker
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        pickedValute = listOfcurrencies[row]
-        //        print(pickedValute)
-        textLabel.text = ratesModel?.Valute[pickedValute]?.Name
-        
-        rubelsTextField.placeholder = listOfcurrencies[row]
-        //        rubelsTextField.placeholder = ratesModel?.Valute["\(pickedValute ?? " ")"]!.CharCode
-        
-        сalculatingСurrency(rubelsTextField: rubelsTextField, dollarsTextField: dollarsTextField, pickedValute: pickedValute)
-    }
-}

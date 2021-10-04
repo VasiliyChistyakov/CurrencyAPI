@@ -15,6 +15,7 @@
 		335C981726C939140083F1B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335C981526C939140083F1B3 /* LaunchScreen.storyboard */; };
 		335C983B26C93D0D0083F1B3 /* RatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335C983A26C93D0D0083F1B3 /* RatesModel.swift */; };
 		33A7AADF26F66C93007CB2E4 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7AADE26F66C93007CB2E4 /* NetworkingManager.swift */; };
+		33B9BF892700A9FF00B0ACFB /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9BF882700A9FF00B0ACFB /* Picker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		335C982826C939140083F1B3 /* ValutaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValutaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		335C983A26C93D0D0083F1B3 /* RatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesModel.swift; sourceTree = "<group>"; };
 		33A7AADE26F66C93007CB2E4 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		33B9BF882700A9FF00B0ACFB /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				335C980A26C939100083F1B3 /* AppDelegate.swift */,
 				335C980C26C939100083F1B3 /* SceneDelegate.swift */,
 				335C980E26C939100083F1B3 /* ViewController.swift */,
+				33B9BF882700A9FF00B0ACFB /* Picker.swift */,
 				33A7AADE26F66C93007CB2E4 /* NetworkingManager.swift */,
 				335C983A26C93D0D0083F1B3 /* RatesModel.swift */,
 				335C981026C939100083F1B3 /* Main.storyboard */,
@@ -240,6 +243,7 @@
 			files = (
 				335C980F26C939100083F1B3 /* ViewController.swift in Sources */,
 				335C980B26C939100083F1B3 /* AppDelegate.swift in Sources */,
+				33B9BF892700A9FF00B0ACFB /* Picker.swift in Sources */,
 				335C980D26C939100083F1B3 /* SceneDelegate.swift in Sources */,
 				33A7AADF26F66C93007CB2E4 /* NetworkingManager.swift in Sources */,
 				335C983B26C93D0D0083F1B3 /* RatesModel.swift in Sources */,
@@ -419,6 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BC7M4A2H3L;
 				INFOPLIST_FILE = Valuta/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -438,6 +443,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BC7M4A2H3L;
 				INFOPLIST_FILE = Valuta/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

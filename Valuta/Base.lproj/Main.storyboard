@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,14 +24,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="97" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="97" id="VaK-5g-mRI"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="15v-k2-foA" secondAttribute="height" multiplier="97:34" priority="100" id="dtC-70-tKy"/>
                                             <constraint firstAttribute="height" constant="34" id="uhv-A1-YpX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Руб ₽ " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6c-F2-KTz">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Руб ₽ " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6c-F2-KTz">
                                         <rect key="frame" x="158" y="0.0" width="97" height="34"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" secondItem="S6c-F2-KTz" secondAttribute="height" multiplier="97:34" id="8fO-7m-sHs"/>
                                             <constraint firstAttribute="width" constant="97" id="i91-yo-VMr"/>
                                             <constraint firstAttribute="height" constant="34" id="pxA-Cs-kYl"/>
                                         </constraints>
@@ -39,15 +42,15 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoJ-ZN-B58">
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WoJ-ZN-B58">
                                 <rect key="frame" x="0.0" y="199" width="414" height="162"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="gUx-6h-gUW"/>
-                                    <constraint firstAttribute="height" constant="162" id="jnE-8r-cRy"/>
+                                    <constraint firstAttribute="width" constant="414" id="2WW-b9-bVk"/>
+                                    <constraint firstAttribute="height" constant="162" id="cpy-Te-Wsa"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите валюту 🤑" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBn-Ep-AT9">
-                                <rect key="frame" x="0.0" y="163" width="414" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Выберите валюту 🤑" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBn-Ep-AT9">
+                                <rect key="frame" x="0.0" y="163.5" width="414" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -57,14 +60,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="WoJ-ZN-B58" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8th-bi-Y3I"/>
-                            <constraint firstItem="h2G-RB-lKi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8y2-NJ-B4b"/>
-                            <constraint firstItem="h2G-RB-lKi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="APd-MX-JNM"/>
-                            <constraint firstItem="sBn-Ep-AT9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Cip-Wn-JFv"/>
-                            <constraint firstItem="WoJ-ZN-B58" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HPP-FI-52d"/>
-                            <constraint firstItem="sBn-Ep-AT9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="119" id="KtV-40-zQN"/>
-                            <constraint firstItem="WoJ-ZN-B58" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="155" id="LKP-BD-210"/>
-                            <constraint firstItem="sBn-Ep-AT9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZSA-U2-Wn0"/>
+                            <constraint firstItem="WoJ-ZN-B58" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0co-XH-WJD"/>
+                            <constraint firstItem="WoJ-ZN-B58" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="38f-LP-tb1"/>
+                            <constraint firstItem="sBn-Ep-AT9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="C8K-cp-n1T"/>
+                            <constraint firstItem="h2G-RB-lKi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Mca-Zk-AY5"/>
+                            <constraint firstItem="h2G-RB-lKi" firstAttribute="top" secondItem="WoJ-ZN-B58" secondAttribute="bottom" priority="100" constant="15" id="Vmb-nm-XtW"/>
+                            <constraint firstItem="sBn-Ep-AT9" firstAttribute="top" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="100" constant="119" id="ZOb-LP-aRU"/>
+                            <constraint firstItem="sBn-Ep-AT9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cAc-RQ-Dt1"/>
+                            <constraint firstItem="WoJ-ZN-B58" firstAttribute="top" secondItem="sBn-Ep-AT9" secondAttribute="bottom" priority="100" id="lWY-6E-DVJ"/>
+                            <constraint firstItem="h2G-RB-lKi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m7e-7T-xGB"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="gDl-3g-lI1" appends="YES" id="ALX-Fh-Gde"/>

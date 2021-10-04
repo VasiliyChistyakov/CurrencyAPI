@@ -21,7 +21,7 @@ struct Valute: Codable{
     let ID: String
     let NumCode: String
     let CharCode: String
-    let Nominal: Int
+    let Nominal: Int?
     let Name: String
     let Value: Double
     let Previous: Double
