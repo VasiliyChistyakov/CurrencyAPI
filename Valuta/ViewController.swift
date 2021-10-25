@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     @objc private func didDoubleTap(_ gesture: UITapGestureRecognizer) {
         сalculatingСurrency(rubelsTextField: rubelsTextField, dollarsTextField: dollarsTextField, pickedValute: pickedValute)
-        print("DoubleTap")
+//        print("DoubleTap")
     }
     
     @IBAction func tapAction(_ sender: Any) {
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         
         if let rubels = rubelsTextField.text, rubels.isEmpty {
             dollarsTextField.text?.removeAll()
-            print("OneTap")
+//            print("OneTap")
         }
     }
     
