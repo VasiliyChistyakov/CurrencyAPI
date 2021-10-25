@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }
@@ -24,11 +25,8 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickedValute = listOfcurrencies[row]
-        //        print(pickedValute)
         textLabel.text = ratesModel?.Valute[pickedValute]?.Name
-        
         rubelsTextField.placeholder = listOfcurrencies[row]
-        //        rubelsTextField.placeholder = ratesModel?.Valute["\(pickedValute ?? " ")"]!.CharCode
         
         сalculatingСurrency(rubelsTextField: rubelsTextField, dollarsTextField: dollarsTextField, pickedValute: pickedValute)
     }

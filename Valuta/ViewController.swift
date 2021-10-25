@@ -10,9 +10,9 @@ import Foundation
 
 class ViewController: UIViewController {
     
+    var listOfcurrencies: [String] = [ ]
     var pickedValute: String!
     var ratesModel: RatesModel?
-    var listOfcurrencies = ["AUD","AZN","GBP","AMD","BYN","BGN","BRL","HUF","HKD","DKK", "USD", "EUR", "INR", "KZT", "CAD", "KGS", "CNY", "MDL", "NOK", "PLN", "RON", "XDR", "SGD", "TJS", "TRY", "TMT", "UZS", "UAH", "CZK", "SEK", "CHF", "ZAR", "KRW", "JPY"]
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var rubelsTextField: UITextField!
@@ -28,8 +28,12 @@ class ViewController: UIViewController {
         tapGesture.numberOfTapsRequired = 2
         view.addGestureRecognizer(tapGesture)
         
-        NetworkingManager.shared.fetchRates { model in
-            self.ratesModel = model
+        NetworkingManager.shared.fetchRates { models in
+            self.ratesModel = models
+            let listsCharCode = models.Valute.keys.sorted()
+            for listCharCode in listsCharCode {
+                self.listOfcurrencies.append(listCharCode)
+            }
         }
     }
     
@@ -50,11 +54,9 @@ class ViewController: UIViewController {
     
     func сalculatingСurrency(rubelsTextField: UITextField!, dollarsTextField: UITextField, pickedValute: String!) {
         guard let roubels: Int = (Int(rubelsTextField.text!)), let pickedValute = pickedValute else { return }
-        
         let valueRates: Double = (Double(roubels) * Double((ratesModel?.Valute[pickedValute]!.Value ?? 0)))
         
         guard let valuteNominal =  ratesModel?.Valute[pickedValute]?.Nominal! else { return }
-        
         let сalculatingNominal = valueRates / Double(valuteNominal)
         
         dollarsTextField.text = "\(String(format:"%.2f",сalculatingNominal))"

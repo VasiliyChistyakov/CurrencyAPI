@@ -7,7 +7,6 @@
 
 import Foundation
 
-// MARK: - RatesModel
 struct RatesModel: Codable {
     let Date: String
     let PreviousDate: String
@@ -16,7 +15,6 @@ struct RatesModel: Codable {
     let Valute: [String: Valute]
 }
 
-// MARK: - Valute
 struct Valute: Codable{
     let ID: String
     let NumCode: String

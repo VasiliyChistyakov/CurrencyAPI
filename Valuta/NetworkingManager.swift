@@ -24,7 +24,6 @@ class NetworkingManager {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let json = try decoder.decode(RatesModel.self, from: data)
                 complitionHandler(json)
-                //                print(self.ratesModel?.Date)
             } catch let error as NSError {
                 print(error.localizedDescription)
             }

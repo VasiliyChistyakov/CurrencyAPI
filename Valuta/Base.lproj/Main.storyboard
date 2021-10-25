@@ -20,7 +20,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="61" translatesAutoresizingMaskIntoConstraints="NO" id="h2G-RB-lKi">
                                 <rect key="frame" x="79.5" y="431" width="255" height="34"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="15v-k2-foA">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="AUD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="15v-k2-foA">
                                         <rect key="frame" x="0.0" y="0.0" width="97" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="97" id="VaK-5g-mRI"/>
