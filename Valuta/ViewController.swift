@@ -27,9 +27,13 @@ class ViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap(_:)))
         tapGesture.numberOfTapsRequired = 2
         view.addGestureRecognizer(tapGesture)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         NetworkingManager.shared.fetchRates { models in
             self.ratesModel = models
+            
             let listsCharCode = models.Valute.keys.sorted()
             for listCharCode in listsCharCode {
                 self.listOfcurrencies.append(listCharCode)
@@ -39,7 +43,7 @@ class ViewController: UIViewController {
     
     @objc private func didDoubleTap(_ gesture: UITapGestureRecognizer) {
         сalculatingСurrency(rubelsTextField: rubelsTextField, dollarsTextField: dollarsTextField, pickedValute: pickedValute)
-//        print("DoubleTap")
+        //        print("DoubleTap")
     }
     
     @IBAction func tapAction(_ sender: Any) {
@@ -48,7 +52,7 @@ class ViewController: UIViewController {
         
         if let rubels = rubelsTextField.text, rubels.isEmpty {
             dollarsTextField.text?.removeAll()
-//            print("OneTap")
+            //            print("OneTap")
         }
     }
     
