@@ -99,16 +99,32 @@
 			children = (
 				335C980A26C939100083F1B3 /* AppDelegate.swift */,
 				335C980C26C939100083F1B3 /* SceneDelegate.swift */,
-				335C980E26C939100083F1B3 /* ViewController.swift */,
-				33B9BF882700A9FF00B0ACFB /* Picker.swift */,
+				33766DD7273AEE5500A03FBF /* Controller */,
 				33A7AADE26F66C93007CB2E4 /* NetworkingManager.swift */,
-				335C983A26C93D0D0083F1B3 /* RatesModel.swift */,
+				33766DD8273AEE7400A03FBF /* Model */,
 				335C981026C939100083F1B3 /* Main.storyboard */,
 				335C981526C939140083F1B3 /* LaunchScreen.storyboard */,
 				335C981326C939140083F1B3 /* Assets.xcassets */,
 				335C981826C939140083F1B3 /* Info.plist */,
 			);
 			path = Valuta;
+			sourceTree = "<group>";
+		};
+		33766DD7273AEE5500A03FBF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				335C980E26C939100083F1B3 /* ViewController.swift */,
+				33B9BF882700A9FF00B0ACFB /* Picker.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		33766DD8273AEE7400A03FBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				335C983A26C93D0D0083F1B3 /* RatesModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
