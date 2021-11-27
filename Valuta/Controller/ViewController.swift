@@ -24,11 +24,11 @@ class ViewController: UIViewController {
         pickerView.dataSource = self
         pickerView.delegate = self
         
+        appendData()
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap(_:)))
         tapGesture.numberOfTapsRequired = 2
         view.addGestureRecognizer(tapGesture)
-        
-        appendData()
     }
     
     func appendData() {
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
             let listsCharCode = models.Valute.keys.sorted()
             self.listOfcurrencies = listsCharCode
         }
-        //        print(listOfcurrencies)
+        print(listOfcurrencies)
     }
     
     
